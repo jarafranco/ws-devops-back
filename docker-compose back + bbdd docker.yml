@@ -1,0 +1,22 @@
+services:
+  mongo:
+    image: mongo:8.0.3
+    container_name: auth-mongo
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27020:27017"
+
+  auth:
+    build: .
+    container_name: auth-service
+    restart: unless-stopped
+    env_file: .env
+    depends_on:
+      - mongo
+    ports:
+      - "7000:3000"
+
+volumes:
+  mongo-data:

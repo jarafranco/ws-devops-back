@@ -1,0 +1,10 @@
+services:
+  workshop-backend:
+    image: workshop-backend:1.0
+    container_name: workshop-backend
+    env_file:
+      - .env
+    ports:
+      - "7000:3000"
+    restart: always
+
