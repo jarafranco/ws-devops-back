@@ -304,16 +304,16 @@ Los eventos de seguridad, como intentos de login fallidos y bloqueos de cuenta, 
 
 ### Backup de Base de Datos
 
-    ```bash
-  # Backup
-  docker exec mongo mongodump --db auth-service --out /backup/$(date +%Y%m%d)
+```bash
+# Backup
+docker exec mongo mongodump --db auth-service --out /backup/$(date +%Y%m%d)
 
-  # Restore
-  docker exec mongo mongorestore --db auth-service /backup/20240115/auth-service
-    ```
-  ### Backup de Base de Datos
+# Restore
+docker exec mongo mongorestore --db auth-service /backup/20240115/auth-service
+```
+### Backup de Base de Datos
 
-    ```bash
-    # Limpiar logs mayores a 30 días
-    find ./logs -name "*.log" -mtime +30 -delete
-    ```
+```bash
+# Limpiar logs mayores a 30 días
+find ./logs -name "*.log" -mtime +30 -delete
+```
