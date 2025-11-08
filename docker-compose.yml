@@ -1,6 +1,6 @@
 services:
   workshop-backend:
-    image: workshop-backend:1.0
+    image: ws-devops-back:1.0
     container_name: workshop-backend
     env_file:
       - .env
