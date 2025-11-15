@@ -1,0 +1,10 @@
+services:
+  jarafranco-backend:
+    image: 192.168.10.208:5000/jarafranco-backend:1.1
+    container_name: jarafranco-backend
+    env_file:
+      - .env
+    ports:
+      - "7002:3000"
+    restart: always
+
